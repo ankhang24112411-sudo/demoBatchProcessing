@@ -16,6 +16,6 @@ public class SalesProcessor implements ItemProcessor<SalesDTO, SalesDTO> {
         if("United States".equalsIgnoreCase(item.country())){
             return null;
         }
-        return null;
+        return item;
     }
 }
