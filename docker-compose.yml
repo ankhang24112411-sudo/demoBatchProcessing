@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: postgres-batch
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: file_upload
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+
+    ports:
+      - "5434:5432"
+
+    volumes:
+      - postgres_batch_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_batch_data:
